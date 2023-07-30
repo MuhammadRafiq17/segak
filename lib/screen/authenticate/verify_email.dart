@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:segak/component/bottom_nav.dart';
@@ -7,10 +6,7 @@ import 'package:segak/screen/home_screen.dart';
 import 'package:segak/services/access_level.dart';
 import 'package:segak/wrapper.dart';
 import 'package:segak/utils/helper.dart';
-// import 'package:segak/component/widget.dart';
-
 import 'package:segak/services/auth.dart';
-
 import '../../component/widget.dart';
 
 class VerifyEmail extends StatefulWidget {

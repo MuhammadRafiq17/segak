@@ -23,21 +23,13 @@ class Profile extends StatelessWidget {
       appBar: AppBar(
           backgroundColor: Colors.green[900],
           iconTheme: const IconThemeData(color: Colors.white),
-          // centerTitle: true,
           title: const Text(
             'Laman Profil',
             style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
-          )
-          // title: const Text(
-          //   'Navigation Drawer',
-          // ),
-          // backgroundColor: const Color(0xff764abc),
-          ),
+          )),
       endDrawer: Drawer(
         width: MediaQuery.of(context).size.width * 0.5,
         child: ListView(
-          // Important: Remove any padding from the ListView.
-          // padding: EdgeInsets.zero,
           children: [
             ListTile(
               leading: const Icon(Icons.manage_accounts,
@@ -102,7 +94,6 @@ class Profile extends StatelessWidget {
                             ),
                           );
                         },
-                        // => print("SEGAK"),
                         child: Column(
                           crossAxisAlignment:
                               CrossAxisAlignment.stretch, // add this
@@ -123,9 +114,7 @@ class Profile extends StatelessWidget {
                                 topRight: Radius.circular(8.0),
                               ),
                               child: Image.asset('assets/images/kelas.jpg',
-                                  // width: 300,
-                                  height: 150,
-                                  fit: BoxFit.fill),
+                                  height: 150, fit: BoxFit.fill),
                             ),
                             const ListTile(
                               title: Center(
@@ -157,7 +146,6 @@ class Profile extends StatelessWidget {
                             ),
                           );
                         },
-                        // => print("SEGAK"),
                         child: Column(
                           crossAxisAlignment:
                               CrossAxisAlignment.stretch, // add this
@@ -178,9 +166,7 @@ class Profile extends StatelessWidget {
                                 topRight: Radius.circular(8.0),
                               ),
                               child: Image.asset('assets/images/skor.jpg',
-                                  // width: 300,
-                                  height: 150,
-                                  fit: BoxFit.fill),
+                                  height: 150, fit: BoxFit.fill),
                             ),
                             const ListTile(
                               title: Center(
@@ -198,81 +184,6 @@ class Profile extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // Container(
-                  //   child: Column(
-                  //     children: [
-                  //       Text(
-                  //         'Lihat Skor Anda!',
-                  //         textAlign: TextAlign.center,
-                  //         style: heading1,
-                  //       ),
-                  //       const SizedBox(height: 10.0),
-                  //       Container(
-                  //         decoration:
-                  //             ThemeHelper().buttonBoxDecoration(context),
-                  //         child: ElevatedButton(
-                  //             style: ThemeHelper().buttonStyle(),
-                  //             child: Padding(
-                  //               padding:
-                  //                   const EdgeInsets.fromLTRB(40, 10, 40, 10),
-                  //               child: Text(
-                  //                 'PENGGAL 1'.toUpperCase(),
-                  //                 textAlign: TextAlign.center,
-                  //                 style: const TextStyle(
-                  //                     fontSize: 20,
-                  //                     fontWeight: FontWeight.bold,
-                  //                     color: Colors.white),
-                  //               ),
-                  //             ),
-                  //             onPressed: () async {
-                  //               Navigator.push(
-                  //                 context,
-                  //                 MaterialPageRoute(
-                  //                   builder: (context) => LihatSkorScreen(),
-                  //                 ),
-                  //               );
-                  //             }),
-                  //       ),
-                  //       const SizedBox(height: 10.0),
-                  //       Container(
-                  //         decoration:
-                  //             ThemeHelper().buttonBoxDecoration(context),
-                  //         child: ElevatedButton(
-                  //             style: ThemeHelper().buttonStyle(),
-                  //             child: Padding(
-                  //               padding:
-                  //                   const EdgeInsets.fromLTRB(40, 10, 40, 10),
-                  //               child: Text(
-                  //                 'PENGGAL 2'.toUpperCase(),
-                  //                 textAlign: TextAlign.center,
-                  //                 style: const TextStyle(
-                  //                     fontSize: 20,
-                  //                     fontWeight: FontWeight.bold,
-                  //                     color: Colors.white),
-                  //               ),
-                  //             ),
-                  //             onPressed: () async {
-                  //               Navigator.push(
-                  //                 context,
-                  //                 MaterialPageRoute(
-                  //                   builder: (context) => LihatSkorScreenPen2(),
-                  //                 ),
-                  //               );
-                  //             }),
-                  //       ),
-                  //       const SizedBox(height: 20.0),
-                  //     ],
-                  //   ),
-                  // ),
-                  // const SearchSection(),
-                  // SizedBox(height: medium),
-                  // LabelSection(text: 'Recommended', style: heading1),
-                  // SizedBox(height: medium),
-                  // const Recommended(),
-                  // SizedBox(height: medium),
-                  // LabelSection(text: 'Top Desination', style: heading2),
-                  // SizedBox(height: medium),
-                  // const Top(),
                 ],
               ),
             ),

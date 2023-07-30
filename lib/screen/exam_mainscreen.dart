@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:segak/screen/exam/lihat_skor.dart';
 import 'package:segak/screen/exam_screen.dart';
 import 'package:segak/screen/exam_screen2.dart';
 import 'package:segak/utils/helper.dart';
@@ -50,12 +49,17 @@ class ExamMain extends StatelessWidget {
                             fontSize: 40, fontWeight: FontWeight.bold),
                       ),
                       const Text(
-                        'Sila Melakukkan Ujian Mengikut Penggal.',
+                        'Sila Masuk Pada Kelas Dahulu Sebelum Melakukkan Peperiksaan.',
                         textAlign: TextAlign.center,
                         style: TextStyle(color: Colors.grey),
                       ),
                       const Text(
-                        '*Anda hanya dibenarkan menjawab sekali sahaja untuk setiap penggal',
+                        '*Sila Melakukkan Ujian Mengikut Penggal.',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      const Text(
+                        '**Anda hanya dibenarkan menjawab sekali sahaja untuk setiap penggal.',
                         textAlign: TextAlign.center,
                         style: TextStyle(color: Colors.grey),
                       ),
@@ -111,32 +115,6 @@ class ExamMain extends StatelessWidget {
                               );
                             }),
                       ),
-                      // const SizedBox(height: 40.0),
-                      // Container(
-                      //   decoration: ThemeHelper().buttonBoxDecoration(context),
-                      //   child: ElevatedButton(
-                      //       style: ThemeHelper().buttonStyle(),
-                      //       child: Padding(
-                      //         padding:
-                      //             const EdgeInsets.fromLTRB(40, 10, 40, 10),
-                      //         child: Text(
-                      //           'LIHAT SKOR ANDA'.toUpperCase(),
-                      //           textAlign: TextAlign.center,
-                      //           style: const TextStyle(
-                      //               fontSize: 20,
-                      //               fontWeight: FontWeight.bold,
-                      //               color: Colors.white),
-                      //         ),
-                      //       ),
-                      //       onPressed: () async {
-                      //         Navigator.push(
-                      //           context,
-                      //           MaterialPageRoute(
-                      //             builder: (context) => LihatSkorScreen(),
-                      //           ),
-                      //         );
-                      //       }),
-                      // ),
                     ],
                   )),
             ),

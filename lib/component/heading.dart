@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:segak/screen/exam/lihat_skor.dart';
 import 'package:segak/utils/helper.dart';
 import 'package:segak/utils/styles.dart';
-
 import '../services/auth.dart';
 
 class HeadingSection extends StatefulWidget {
@@ -77,15 +76,6 @@ class _HeadingSectionState extends State<HeadingSection> {
                       color: Colors.grey.shade300,
                       size: 30.0,
                     ),
-                    // decoration: BoxDecoration(
-                    //   color: text,
-                    //   borderRadius: BorderRadius.circular(100),
-                    //   // image: const DecorationImage(
-                    //   //   image: AssetImage('/assets/images/profile.png'),
-                    //   // ),
-                    // ),
-                    // height: 50,
-                    // width: 50,
                   ),
                   SizedBox(width: small),
                   Column(

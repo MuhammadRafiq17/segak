@@ -5,7 +5,6 @@ import 'package:segak/component/widget.dart';
 import 'package:segak/screen/exam_screen.dart';
 import 'package:segak/utils/helper.dart';
 import 'package:segak/utils/styles.dart';
-
 import '../../component/bottom_nav.dart';
 
 class LihatSkorScreen extends StatefulWidget {

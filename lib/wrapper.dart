@@ -3,11 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:segak/screen/authenticate/authen.dart';
 import 'package:segak/screen/authenticate/verify_email.dart';
 
-// import 'component/bottom_nav.dart';
-// import '../models/user.dart';
-// import 'package:segak/screen/authenticate/sign_in.dart';
-// import 'package:provider/provider.dart';
-
 class Wrapper extends StatefulWidget {
   const Wrapper({Key? key}) : super(key: key);
 

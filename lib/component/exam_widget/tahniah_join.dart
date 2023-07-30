@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:segak/component/bottom_nav.dart';
 import 'package:segak/screen/guru/guruscreen.dart';
 import 'package:segak/screen/guru/lihat_kelas.dart';
+import 'package:segak/screen/profile_screen.dart';
 import 'package:segak/utils/helper.dart';
 
-class TahniahCiptaKelas extends StatefulWidget {
-  const TahniahCiptaKelas({super.key});
+class TahniahJoinKelas extends StatefulWidget {
+  const TahniahJoinKelas({super.key});
 
   @override
-  State<TahniahCiptaKelas> createState() => _TahniahCiptaKelasState();
+  State<TahniahJoinKelas> createState() => _TahniahJoinKelasState();
 }
 
-class _TahniahCiptaKelasState extends State<TahniahCiptaKelas> {
+class _TahniahJoinKelasState extends State<TahniahJoinKelas> {
   final double _headerHeight = 200;
 
   @override
@@ -25,16 +27,12 @@ class _TahniahCiptaKelasState extends State<TahniahCiptaKelas> {
                   margin: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                   child: Column(
                     children: [
-                      const SizedBox(height: 200.0),
+                      const SizedBox(height: 160.0),
                       const Text(
-                        'Tahniah Kelas Sudah Di Cipta!',
+                        'Tahniah Anda Telah Menyertai Kelas!',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 40, fontWeight: FontWeight.bold),
-                      ),
-                      const Text(
-                        'Sila Lihat Kelas Anda',
-                        style: TextStyle(color: Colors.grey),
                       ),
                       const SizedBox(height: 30.0),
                       Container(
@@ -57,7 +55,7 @@ class _TahniahCiptaKelasState extends State<TahniahCiptaKelas> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => Guru(),
+                                  builder: (context) => BottomNav(),
                                 ),
                               );
                             }),

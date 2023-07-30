@@ -20,22 +20,16 @@ class Guru extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.green[900],
         iconTheme: const IconThemeData(color: Colors.white),
-        // centerTitle: true,
         title: const Text(
           'Laman Guru',
           style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
         ),
         automaticallyImplyLeading: false,
-        // title: const Text(
-        //   'Navigation Drawer',
-        // ),
-        // backgroundColor: const Color(0xff764abc),
       ),
       endDrawer: Drawer(
         width: MediaQuery.of(context).size.width * 0.5,
         child: ListView(
           // Important: Remove any padding from the ListView.
-          // padding: EdgeInsets.zero,
           children: [
             ListTile(
               leading: const Icon(Icons.manage_accounts,
@@ -100,7 +94,6 @@ class Guru extends StatelessWidget {
                             ),
                           );
                         },
-                        // => print("SEGAK"),
                         child: Column(
                           crossAxisAlignment:
                               CrossAxisAlignment.stretch, // add this
@@ -121,9 +114,7 @@ class Guru extends StatelessWidget {
                                 topRight: Radius.circular(8.0),
                               ),
                               child: Image.asset('assets/images/cipta.jpg',
-                                  // width: 300,
-                                  height: 150,
-                                  fit: BoxFit.fill),
+                                  height: 150, fit: BoxFit.fill),
                             ),
                             const ListTile(
                               title: Center(
@@ -155,7 +146,6 @@ class Guru extends StatelessWidget {
                             ),
                           );
                         },
-                        // => print("SEGAK"),
                         child: Column(
                           crossAxisAlignment:
                               CrossAxisAlignment.stretch, // add this
@@ -176,9 +166,7 @@ class Guru extends StatelessWidget {
                                 topRight: Radius.circular(8.0),
                               ),
                               child: Image.asset('assets/images/kelasanda.jpg',
-                                  // width: 300,
-                                  height: 150,
-                                  fit: BoxFit.fill),
+                                  height: 150, fit: BoxFit.fill),
                             ),
                             const ListTile(
                               title: Center(

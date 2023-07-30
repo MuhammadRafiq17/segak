@@ -5,7 +5,6 @@ import 'package:segak/screen/guru/guruscreen.dart';
 import 'package:segak/screen/guru/tahniah_kelas.dart';
 import 'package:segak/services/auth.dart';
 import 'package:segak/utils/helper.dart';
-
 import '../../services/database.dart';
 
 class CiptaKelasScreen extends StatefulWidget {
@@ -32,7 +31,6 @@ class _CiptaKelasScreenState extends State<CiptaKelasScreen> {
             'Cipta Kelas',
             style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
           )),
-
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -41,13 +39,6 @@ class _CiptaKelasScreenState extends State<CiptaKelasScreen> {
               child: HeaderWidget(_headerHeight, true, Icons.class_outlined),
               //let's create a common header widget
             ),
-            // const Text(
-            //   "EXAM",
-            //   style: TextStyle(
-            //     fontSize: 26,
-            //     fontWeight: FontWeight.bold,
-            //   ),
-            // ),
             SafeArea(
               child: Container(
                   padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
@@ -87,11 +78,6 @@ class _CiptaKelasScreenState extends State<CiptaKelasScreen> {
                                         child: Icon(Icons.abc_outlined),
                                       ),
                                     ),
-                                    // decoration: ThemeHelper().textInputDecoration(
-                                    //     'Username', 'Enter your username'),
-                                    // onChanged: (val) {
-                                    //   setState(() => username = val);
-                                    // }
                                     onChanged: (val) {
                                       setState(() => ciptakelas = val);
                                     }),
@@ -131,28 +117,6 @@ class _CiptaKelasScreenState extends State<CiptaKelasScreen> {
                                             TahniahCiptaKelas(),
                                       ),
                                     );
-
-                                    // if (ciptakelas != null) {
-                                    //   var userFirebase =
-                                    //       FirebaseAuth.instance.currentUser;
-                                    //   await UserDatabaseService(
-                                    //           uid: userFirebase!.uid)
-                                    //       .updateExam5(jarakcm);
-                                    //   Navigator.push(
-                                    //     context,
-                                    //     MaterialPageRoute(
-                                    //       builder: (context) => TahniahScreen(),
-                                    //     ),
-                                    //   );
-                                    // } else {
-                                    //   Fluttertoast.showToast(
-                                    //       msg: "Mauskkan Jarak Melunjur ",
-                                    //       toastLength: Toast.LENGTH_SHORT,
-                                    //       gravity: ToastGravity.BOTTOM,
-                                    //       fontSize: 20.0,
-                                    //       backgroundColor: Colors.transparent,
-                                    //       textColor: Colors.red);
-                                    // }
                                   },
                                 ),
                               ),
@@ -164,11 +128,6 @@ class _CiptaKelasScreenState extends State<CiptaKelasScreen> {
           ],
         ),
       ),
-      // body: Image.asset(
-      //   'assets/images/segak.jpg',
-      //   height: 500,
-      //   width: 2000,
-      // ),
     );
   }
 }

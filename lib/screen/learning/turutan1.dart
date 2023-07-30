@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../component/learning_text/turutan1_text.dart';
 import '../../component/learning_text/turutan1_text2.dart';
 import '../../component/learning_text/yt_turutan1.dart';
@@ -18,11 +17,6 @@ class TurutanJisim extends StatelessWidget {
               'Turutan 1',
               style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
             )),
-        // body: Image.asset(
-        //   'assets/images/segak.jpg',
-        //   height: 500,
-        //   width: 2000,
-        // ),
         body: ListView(children: <Widget>[
           Container(
             margin: EdgeInsets.all(8.0),
@@ -30,7 +24,6 @@ class TurutanJisim extends StatelessWidget {
               shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(8.0))),
               child: InkWell(
-                // onTap: () => print("SEGAK"),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch, // add this
                   children: <Widget>[
@@ -72,15 +65,6 @@ class TurutanJisim extends StatelessWidget {
                 children: [
                   const TextTurutanJisim(),
                   SizedBox(height: medium),
-                  // const SearchSection(),
-                  // SizedBox(height: medium),
-                  // LabelSection(text: 'Recommended', style: heading1),
-                  // SizedBox(height: medium),
-                  // const Recommended(),
-                  // SizedBox(height: medium),
-                  // LabelSection(text: 'Top Desination', style: heading2),
-                  // SizedBox(height: medium),
-                  // const Top(),
                 ],
               ),
             ),
@@ -92,15 +76,6 @@ class TurutanJisim extends StatelessWidget {
                 children: [
                   const Text2TurutanJisim(),
                   SizedBox(height: medium),
-                  // const SearchSection(),
-                  // SizedBox(height: medium),
-                  // LabelSection(text: 'Recommended', style: heading1),
-                  // SizedBox(height: medium),
-                  // const Recommended(),
-                  // SizedBox(height: medium),
-                  // LabelSection(text: 'Top Desination', style: heading2),
-                  // SizedBox(height: medium),
-                  // const Top(),
                 ],
               ),
             ),
@@ -158,9 +133,7 @@ class TurutanJisim extends StatelessWidget {
                         topRight: Radius.circular(8.0),
                       ),
                       child: Image.asset('assets/images/bmiperempuan.jpg',
-                          // width: 300,
-                          height: 150,
-                          fit: BoxFit.fill),
+                          height: 150, fit: BoxFit.fill),
                     ),
                     const ListTile(
                       title: Center(
@@ -192,7 +165,6 @@ class TurutanJisim extends StatelessWidget {
                     ),
                   );
                 },
-                // => print("SEGAK"),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch, // add this
                   children: <Widget>[

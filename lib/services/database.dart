@@ -16,16 +16,15 @@ class UserDatabaseService {
   final exam5data = FirebaseFirestore.instance.collection('exam5');
   final kelasData = FirebaseFirestore.instance.collection('Kelas');
 
+  final studentData = FirebaseFirestore.instance.collection('Rujukan');
+
   Future setuserdata(String username, String email, String phoneNo,
       String gender, String age, String usertype) async {
-    //const int access_level = 1;
-
     final userData = Users(
         uid: uid,
         email: email,
         name: username,
         phone: phoneNo,
-        //access_level: access_level,
         gender: gender,
         usertype: usertype,
         age: age);
@@ -113,6 +112,51 @@ class UserDatabaseService {
             }
           }
           if (ifPenggal1Exist == 0) {
+            {
+              User? userFirebase = FirebaseAuth.instance.currentUser;
+              final querySnapshot = await kelasData
+                  .doc(userFirebase!.uid)
+                  .collection('listKelas')
+                  .get();
+              int ifKelasExist = querySnapshot.docs.length;
+              String halfkelasID = '0';
+              if (ifKelasExist < 10) {
+                halfkelasID = halfkelasID + ifKelasExist.toString();
+              } else {
+                halfkelasID = ifKelasExist.toString();
+              }
+              var kk = FirebaseFirestore.instance
+                  .collection('users')
+                  .doc(userFirebase!.uid)
+                  .get()
+                  .then((DocumentSnapshot documentSnapshot) async {
+                if (documentSnapshot.exists) {
+                  String name = documentSnapshot.get('name').toString();
+                  String age = documentSnapshot.get('age').toString();
+                  String IDKelas = documentSnapshot.get('IDKelas').toString();
+                  await FirebaseFirestore.instance
+                      .collection('Rujukan')
+                      .doc(IDKelas)
+                      .get()
+                      .then((DocumentSnapshot documentSnapshot2) async {
+                    if (documentSnapshot2.exists) {
+                      String cikguUID = documentSnapshot2.get('uid').toString();
+                      print(cikguUID);
+                      FirebaseFirestore.instance
+                          .collection('Kelas')
+                          .doc(cikguUID) // tukar guna teacher uid
+                          .collection('listKelas')
+                          .doc(IDKelas)
+                          .collection('Student')
+                          .doc(userFirebase.uid)
+                          .update({
+                        'scoreE1P1': score,
+                      });
+                    }
+                  });
+                }
+              });
+            }
             exam1data
                 .doc(userFirebase.uid + age)
                 .collection(userFirebase.uid)
@@ -124,6 +168,51 @@ class UserDatabaseService {
               'score': score,
             });
           } else if (ifPenggal1Exist == 1) {
+            {
+              User? userFirebase = FirebaseAuth.instance.currentUser;
+              final querySnapshot = await kelasData
+                  .doc(userFirebase!.uid)
+                  .collection('listKelas')
+                  .get();
+              int ifKelasExist = querySnapshot.docs.length;
+              String halfkelasID = '0';
+              if (ifKelasExist < 10) {
+                halfkelasID = halfkelasID + ifKelasExist.toString();
+              } else {
+                halfkelasID = ifKelasExist.toString();
+              }
+              var kk = FirebaseFirestore.instance
+                  .collection('users')
+                  .doc(userFirebase!.uid)
+                  .get()
+                  .then((DocumentSnapshot documentSnapshot) async {
+                if (documentSnapshot.exists) {
+                  String name = documentSnapshot.get('name').toString();
+                  String age = documentSnapshot.get('age').toString();
+                  String IDKelas = documentSnapshot.get('IDKelas').toString();
+                  await FirebaseFirestore.instance
+                      .collection('Rujukan')
+                      .doc(IDKelas)
+                      .get()
+                      .then((DocumentSnapshot documentSnapshot2) async {
+                    if (documentSnapshot2.exists) {
+                      String cikguUID = documentSnapshot2.get('uid').toString();
+                      print(cikguUID);
+                      FirebaseFirestore.instance
+                          .collection('Kelas')
+                          .doc(cikguUID) // tukar guna teacher uid
+                          .collection('listKelas')
+                          .doc(IDKelas)
+                          .collection('Student')
+                          .doc(userFirebase.uid)
+                          .update({
+                        'scoreE1P2': score,
+                      });
+                    }
+                  });
+                }
+              });
+            }
             exam1data
                 .doc(userFirebase.uid + age)
                 .collection(userFirebase.uid)
@@ -209,6 +298,51 @@ class UserDatabaseService {
             }
           }
           if (ifPenggal1Exist == 0) {
+            {
+              User? userFirebase = FirebaseAuth.instance.currentUser;
+              final querySnapshot = await kelasData
+                  .doc(userFirebase!.uid)
+                  .collection('listKelas')
+                  .get();
+              int ifKelasExist = querySnapshot.docs.length;
+              String halfkelasID = '0';
+              if (ifKelasExist < 10) {
+                halfkelasID = halfkelasID + ifKelasExist.toString();
+              } else {
+                halfkelasID = ifKelasExist.toString();
+              }
+              var kk = FirebaseFirestore.instance
+                  .collection('users')
+                  .doc(userFirebase!.uid)
+                  .get()
+                  .then((DocumentSnapshot documentSnapshot) async {
+                if (documentSnapshot.exists) {
+                  String name = documentSnapshot.get('name').toString();
+                  String age = documentSnapshot.get('age').toString();
+                  String IDKelas = documentSnapshot.get('IDKelas').toString();
+                  await FirebaseFirestore.instance
+                      .collection('Rujukan')
+                      .doc(IDKelas)
+                      .get()
+                      .then((DocumentSnapshot documentSnapshot2) async {
+                    if (documentSnapshot2.exists) {
+                      String cikguUID = documentSnapshot2.get('uid').toString();
+                      print(cikguUID);
+                      FirebaseFirestore.instance
+                          .collection('Kelas')
+                          .doc(cikguUID)
+                          .collection('listKelas')
+                          .doc(IDKelas)
+                          .collection('Student')
+                          .doc(userFirebase.uid)
+                          .update({
+                        'scoreE2P1': score,
+                      });
+                    }
+                  });
+                }
+              });
+            }
             exam2data
                 .doc(userFirebase.uid + age)
                 .collection(userFirebase.uid)
@@ -218,6 +352,51 @@ class UserDatabaseService {
               'score': score,
             });
           } else if (ifPenggal1Exist == 1) {
+            {
+              User? userFirebase = FirebaseAuth.instance.currentUser;
+              final querySnapshot = await kelasData
+                  .doc(userFirebase!.uid)
+                  .collection('listKelas')
+                  .get();
+              int ifKelasExist = querySnapshot.docs.length;
+              String halfkelasID = '0';
+              if (ifKelasExist < 10) {
+                halfkelasID = halfkelasID + ifKelasExist.toString();
+              } else {
+                halfkelasID = ifKelasExist.toString();
+              }
+              var kk = FirebaseFirestore.instance
+                  .collection('users')
+                  .doc(userFirebase!.uid)
+                  .get()
+                  .then((DocumentSnapshot documentSnapshot) async {
+                if (documentSnapshot.exists) {
+                  String name = documentSnapshot.get('name').toString();
+                  String age = documentSnapshot.get('age').toString();
+                  String IDKelas = documentSnapshot.get('IDKelas').toString();
+                  await FirebaseFirestore.instance
+                      .collection('Rujukan')
+                      .doc(IDKelas)
+                      .get()
+                      .then((DocumentSnapshot documentSnapshot2) async {
+                    if (documentSnapshot2.exists) {
+                      String cikguUID = documentSnapshot2.get('uid').toString();
+                      print(cikguUID);
+                      FirebaseFirestore.instance
+                          .collection('Kelas')
+                          .doc(cikguUID)
+                          .collection('listKelas')
+                          .doc(IDKelas)
+                          .collection('Student')
+                          .doc(userFirebase.uid)
+                          .update({
+                        'scoreE2P2': score,
+                      });
+                    }
+                  });
+                }
+              });
+            }
             exam2data
                 .doc(userFirebase.uid + age)
                 .collection(userFirebase.uid)
@@ -299,6 +478,51 @@ class UserDatabaseService {
             }
           }
           if (ifPenggal1Exist == 0) {
+            {
+              User? userFirebase = FirebaseAuth.instance.currentUser;
+              final querySnapshot = await kelasData
+                  .doc(userFirebase!.uid)
+                  .collection('listKelas')
+                  .get();
+              int ifKelasExist = querySnapshot.docs.length;
+              String halfkelasID = '0';
+              if (ifKelasExist < 10) {
+                halfkelasID = halfkelasID + ifKelasExist.toString();
+              } else {
+                halfkelasID = ifKelasExist.toString();
+              }
+              var kk = FirebaseFirestore.instance
+                  .collection('users')
+                  .doc(userFirebase!.uid)
+                  .get()
+                  .then((DocumentSnapshot documentSnapshot) async {
+                if (documentSnapshot.exists) {
+                  String name = documentSnapshot.get('name').toString();
+                  String age = documentSnapshot.get('age').toString();
+                  String IDKelas = documentSnapshot.get('IDKelas').toString();
+                  await FirebaseFirestore.instance
+                      .collection('Rujukan')
+                      .doc(IDKelas)
+                      .get()
+                      .then((DocumentSnapshot documentSnapshot2) async {
+                    if (documentSnapshot2.exists) {
+                      String cikguUID = documentSnapshot2.get('uid').toString();
+                      print(cikguUID);
+                      FirebaseFirestore.instance
+                          .collection('Kelas')
+                          .doc(cikguUID)
+                          .collection('listKelas')
+                          .doc(IDKelas)
+                          .collection('Student')
+                          .doc(userFirebase.uid)
+                          .update({
+                        'scoreE3P1': score,
+                      });
+                    }
+                  });
+                }
+              });
+            }
             exam3data
                 .doc(userFirebase.uid + age)
                 .collection(userFirebase.uid)
@@ -308,6 +532,51 @@ class UserDatabaseService {
               'score': score,
             });
           } else if (ifPenggal1Exist == 1) {
+            {
+              User? userFirebase = FirebaseAuth.instance.currentUser;
+              final querySnapshot = await kelasData
+                  .doc(userFirebase!.uid)
+                  .collection('listKelas')
+                  .get();
+              int ifKelasExist = querySnapshot.docs.length;
+              String halfkelasID = '0';
+              if (ifKelasExist < 10) {
+                halfkelasID = halfkelasID + ifKelasExist.toString();
+              } else {
+                halfkelasID = ifKelasExist.toString();
+              }
+              var kk = FirebaseFirestore.instance
+                  .collection('users')
+                  .doc(userFirebase!.uid)
+                  .get()
+                  .then((DocumentSnapshot documentSnapshot) async {
+                if (documentSnapshot.exists) {
+                  String name = documentSnapshot.get('name').toString();
+                  String age = documentSnapshot.get('age').toString();
+                  String IDKelas = documentSnapshot.get('IDKelas').toString();
+                  await FirebaseFirestore.instance
+                      .collection('Rujukan')
+                      .doc(IDKelas)
+                      .get()
+                      .then((DocumentSnapshot documentSnapshot2) async {
+                    if (documentSnapshot2.exists) {
+                      String cikguUID = documentSnapshot2.get('uid').toString();
+                      print(cikguUID);
+                      FirebaseFirestore.instance
+                          .collection('Kelas')
+                          .doc(cikguUID) // tukar guna teacher uid
+                          .collection('listKelas')
+                          .doc(IDKelas)
+                          .collection('Student')
+                          .doc(userFirebase.uid)
+                          .update({
+                        'scoreE3P2': score,
+                      });
+                    }
+                  });
+                }
+              });
+            }
             exam3data
                 .doc(userFirebase.uid + age)
                 .collection(userFirebase.uid)
@@ -389,6 +658,51 @@ class UserDatabaseService {
             }
           }
           if (ifPenggal1Exist == 0) {
+            {
+              User? userFirebase = FirebaseAuth.instance.currentUser;
+              final querySnapshot = await kelasData
+                  .doc(userFirebase!.uid)
+                  .collection('listKelas')
+                  .get();
+              int ifKelasExist = querySnapshot.docs.length;
+              String halfkelasID = '0';
+              if (ifKelasExist < 10) {
+                halfkelasID = halfkelasID + ifKelasExist.toString();
+              } else {
+                halfkelasID = ifKelasExist.toString();
+              }
+              var kk = FirebaseFirestore.instance
+                  .collection('users')
+                  .doc(userFirebase!.uid)
+                  .get()
+                  .then((DocumentSnapshot documentSnapshot) async {
+                if (documentSnapshot.exists) {
+                  String name = documentSnapshot.get('name').toString();
+                  String age = documentSnapshot.get('age').toString();
+                  String IDKelas = documentSnapshot.get('IDKelas').toString();
+                  await FirebaseFirestore.instance
+                      .collection('Rujukan')
+                      .doc(IDKelas)
+                      .get()
+                      .then((DocumentSnapshot documentSnapshot2) async {
+                    if (documentSnapshot2.exists) {
+                      String cikguUID = documentSnapshot2.get('uid').toString();
+                      print(cikguUID);
+                      FirebaseFirestore.instance
+                          .collection('Kelas')
+                          .doc(cikguUID)
+                          .collection('listKelas')
+                          .doc(IDKelas)
+                          .collection('Student')
+                          .doc(userFirebase.uid)
+                          .update({
+                        'scoreE4P1': score,
+                      });
+                    }
+                  });
+                }
+              });
+            }
             exam4data
                 .doc(userFirebase.uid + age)
                 .collection(userFirebase.uid)
@@ -398,6 +712,51 @@ class UserDatabaseService {
               'score': score,
             });
           } else if (ifPenggal1Exist == 1) {
+            {
+              User? userFirebase = FirebaseAuth.instance.currentUser;
+              final querySnapshot = await kelasData
+                  .doc(userFirebase!.uid)
+                  .collection('listKelas')
+                  .get();
+              int ifKelasExist = querySnapshot.docs.length;
+              String halfkelasID = '0';
+              if (ifKelasExist < 10) {
+                halfkelasID = halfkelasID + ifKelasExist.toString();
+              } else {
+                halfkelasID = ifKelasExist.toString();
+              }
+              var kk = FirebaseFirestore.instance
+                  .collection('users')
+                  .doc(userFirebase!.uid)
+                  .get()
+                  .then((DocumentSnapshot documentSnapshot) async {
+                if (documentSnapshot.exists) {
+                  String name = documentSnapshot.get('name').toString();
+                  String age = documentSnapshot.get('age').toString();
+                  String IDKelas = documentSnapshot.get('IDKelas').toString();
+                  await FirebaseFirestore.instance
+                      .collection('Rujukan')
+                      .doc(IDKelas)
+                      .get()
+                      .then((DocumentSnapshot documentSnapshot2) async {
+                    if (documentSnapshot2.exists) {
+                      String cikguUID = documentSnapshot2.get('uid').toString();
+                      print(cikguUID);
+                      FirebaseFirestore.instance
+                          .collection('Kelas')
+                          .doc(cikguUID) // tukar guna teacher uid
+                          .collection('listKelas')
+                          .doc(IDKelas)
+                          .collection('Student')
+                          .doc(userFirebase.uid)
+                          .update({
+                        'scoreE4P2': score,
+                      });
+                    }
+                  });
+                }
+              });
+            }
             exam4data
                 .doc(userFirebase.uid + age)
                 .collection(userFirebase.uid)
@@ -487,6 +846,51 @@ class UserDatabaseService {
             }
           }
           if (ifPenggal1Exist == 0) {
+            {
+              User? userFirebase = FirebaseAuth.instance.currentUser;
+              final querySnapshot = await kelasData
+                  .doc(userFirebase!.uid)
+                  .collection('listKelas')
+                  .get();
+              int ifKelasExist = querySnapshot.docs.length;
+              String halfkelasID = '0';
+              if (ifKelasExist < 10) {
+                halfkelasID = halfkelasID + ifKelasExist.toString();
+              } else {
+                halfkelasID = ifKelasExist.toString();
+              }
+              var kk = FirebaseFirestore.instance
+                  .collection('users')
+                  .doc(userFirebase!.uid)
+                  .get()
+                  .then((DocumentSnapshot documentSnapshot) async {
+                if (documentSnapshot.exists) {
+                  String name = documentSnapshot.get('name').toString();
+                  String age = documentSnapshot.get('age').toString();
+                  String IDKelas = documentSnapshot.get('IDKelas').toString();
+                  await FirebaseFirestore.instance
+                      .collection('Rujukan')
+                      .doc(IDKelas)
+                      .get()
+                      .then((DocumentSnapshot documentSnapshot2) async {
+                    if (documentSnapshot2.exists) {
+                      String cikguUID = documentSnapshot2.get('uid').toString();
+                      print(cikguUID);
+                      FirebaseFirestore.instance
+                          .collection('Kelas')
+                          .doc(cikguUID)
+                          .collection('listKelas')
+                          .doc(IDKelas)
+                          .collection('Student')
+                          .doc(userFirebase.uid)
+                          .update({
+                        'scoreE5P1': score,
+                      });
+                    }
+                  });
+                }
+              });
+            }
             exam5data
                 .doc(userFirebase.uid + age)
                 .collection(userFirebase.uid)
@@ -496,6 +900,51 @@ class UserDatabaseService {
               'score': score,
             });
           } else if (ifPenggal1Exist == 1) {
+            {
+              User? userFirebase = FirebaseAuth.instance.currentUser;
+              final querySnapshot = await kelasData
+                  .doc(userFirebase!.uid)
+                  .collection('listKelas')
+                  .get();
+              int ifKelasExist = querySnapshot.docs.length;
+              String halfkelasID = '0';
+              if (ifKelasExist < 10) {
+                halfkelasID = halfkelasID + ifKelasExist.toString();
+              } else {
+                halfkelasID = ifKelasExist.toString();
+              }
+              var kk = FirebaseFirestore.instance
+                  .collection('users')
+                  .doc(userFirebase!.uid)
+                  .get()
+                  .then((DocumentSnapshot documentSnapshot) async {
+                if (documentSnapshot.exists) {
+                  String name = documentSnapshot.get('name').toString();
+                  String age = documentSnapshot.get('age').toString();
+                  String IDKelas = documentSnapshot.get('IDKelas').toString();
+                  await FirebaseFirestore.instance
+                      .collection('Rujukan')
+                      .doc(IDKelas)
+                      .get()
+                      .then((DocumentSnapshot documentSnapshot2) async {
+                    if (documentSnapshot2.exists) {
+                      String cikguUID = documentSnapshot2.get('uid').toString();
+                      print(cikguUID);
+                      FirebaseFirestore.instance
+                          .collection('Kelas')
+                          .doc(cikguUID) // tukar guna teacher uid
+                          .collection('listKelas')
+                          .doc(IDKelas)
+                          .collection('Student')
+                          .doc(userFirebase.uid)
+                          .update({
+                        'scoreE5P2': score,
+                      });
+                    }
+                  });
+                }
+              });
+            }
             exam5data
                 .doc(userFirebase.uid + age)
                 .collection(userFirebase.uid)
@@ -530,85 +979,93 @@ class UserDatabaseService {
         kelasData
             .doc(userFirebase.uid)
             .collection('listKelas')
-            .doc(ifKelasExist.toString())
+            .doc(userFirebase.uid.substring(0, 3) + halfkelasID)
             .set({
           'IDKelas': userFirebase.uid.substring(0, 3) + halfkelasID,
           'NameKelas': namaKelas,
           'Maximum': 30,
         });
+        FirebaseFirestore.instance
+            .collection('Rujukan')
+            .doc(userFirebase.uid.substring(0, 3) + halfkelasID)
+            .set({
+          'IDKelas': userFirebase.uid.substring(0, 3) + halfkelasID,
+          'namaKelas': namaKelas,
+          'uid': userFirebase.uid,
+        });
       }
-      // else {
-      //   kelasData.doc(userFirebase.uid).collection('listStudent').doc('0').set({
-      //     'ID': namaKelas,
-      //     'Maximum': 30,
-      //   });
-      // }
     });
-    // var kk = FirebaseFirestore.instance
-    //     .collection('Kelas')
-    //     .doc(userFirebase!.uid)
-    //     .get()
-    //     .then((DocumentSnapshot documentSnapshot) async {
-    //   if (documentSnapshot.exists) {
-    //     age = documentSnapshot.get('age').toString();
-    //     gender = documentSnapshot.get('gender').toString();
-    //     final querySnapshot = await exam5data
-    //         .doc(userFirebase.uid + age)
-    //         .collection(userFirebase.uid)
-    //         .get();
-    //     int ifPenggal1Exist = querySnapshot.docs.length;
-    //     if (ifPenggal1Exist <= 2) {
-    //       for (int i = 0; i < 8; i++) {
-    //         if (agelist[i] == age) {
-    //           if (gender == 'Lelaki') {
-    //             if (jarak >= score5[i]) {
-    //               score = scorelist[0];
-    //             } else if (jarak <= score4[i] && jarak >= score4_2[i]) {
-    //               score = scorelist[1];
-    //             } else if (jarak <= score3[i] && jarak >= score3_2[i]) {
-    //               score = scorelist[2];
-    //             } else if (jarak <= score2[i] && jarak >= score2_2[i]) {
-    //               score = scorelist[3];
-    //             } else {
-    //               score = scorelist[4];
-    //             }
-    //           } else if (gender == 'Perempuan') {
-    //             if (jarak >= score5P[i]) {
-    //               score = scorelist[0];
-    //             } else if (jarak <= score4P[i] && jarak >= score4_2P[i]) {
-    //               score = scorelist[1];
-    //             } else if (jarak <= score3P[i] && jarak >= score3_2P[i]) {
-    //               score = scorelist[2];
-    //             } else if (jarak <= score2P[i] && jarak >= score2_2P[i]) {
-    //               score = scorelist[3];
-    //             } else {
-    //               score = scorelist[4];
-    //             }
-    //           }
-    //         }
-    //       }
-    //       if (ifPenggal1Exist == 0) {
-    //         exam5data
-    //             .doc(userFirebase.uid + age)
-    //             .collection(userFirebase.uid)
-    //             .doc('Penggal_1')
-    //             .set({
-    //           'jarak': jarak.toString(),
-    //           'score': score,
-    //         });
-    //       } else if (ifPenggal1Exist == 1) {
-    //         exam5data
-    //             .doc(userFirebase.uid + age)
-    //             .collection(userFirebase.uid)
-    //             .doc('Penggal_2')
-    //             .set({
-    //           'jarak': jarak.toString(),
-    //           'score': score,
-    //         });
-    //       }
-    //     }
-    //   }
-    // });
+  }
+
+  Future<void> joinClass(String IDKelas) async {
+    User? userFirebase = FirebaseAuth.instance.currentUser;
+    final querySnapshot =
+        await kelasData.doc(userFirebase!.uid).collection('listKelas').get();
+    int ifKelasExist = querySnapshot.docs.length;
+    String halfkelasID = '0';
+    if (ifKelasExist < 10) {
+      halfkelasID = halfkelasID + ifKelasExist.toString();
+    } else {
+      halfkelasID = ifKelasExist.toString();
+    }
+    var kk = FirebaseFirestore.instance
+        .collection('users')
+        .doc(userFirebase!.uid)
+        .get()
+        .then((DocumentSnapshot documentSnapshot) async {
+      if (documentSnapshot.exists) {
+        String name = documentSnapshot.get('name').toString();
+        String age = documentSnapshot.get('age').toString();
+
+        await FirebaseFirestore.instance
+            .collection('Rujukan')
+            .doc(IDKelas)
+            .get()
+            .then((DocumentSnapshot documentSnapshot2) async {
+          if (documentSnapshot2.exists) {
+            String cikguUID = documentSnapshot2.get('uid').toString();
+            print(cikguUID);
+            FirebaseFirestore.instance
+                .collection('Kelas')
+                .doc(cikguUID)
+                .collection('listKelas')
+                .doc(IDKelas)
+                .collection('Student')
+                .doc(userFirebase.uid)
+                .set({
+              'age': age,
+              'name': name,
+              'IDKelas': IDKelas,
+              'scoreE1P1': "",
+              'scoreE1P2': "",
+              'scoreE2P1': "",
+              'scoreE2P2': "",
+              'scoreE3P1': "",
+              'scoreE3P2': "",
+              'scoreE4P1': "",
+              'scoreE4P2': "",
+              'scoreE5P1': "",
+              'scoreE5P2': "",
+            });
+            final querySnapshot = await studentData
+                .doc(userFirebase!.uid)
+                .collection('listPelajar')
+                .get();
+            int ifStudent = querySnapshot.docs.length;
+            FirebaseFirestore.instance
+                .collection('Rujukan')
+                .doc(cikguUID.substring(0, 3) + halfkelasID)
+                .collection('listPelajar')
+                .doc(ifStudent.toString())
+                .set({'uid': uid});
+            FirebaseFirestore.instance
+                .collection('users')
+                .doc(userFirebase!.uid)
+                .update({'IDKelas': IDKelas});
+          }
+        });
+      }
+    });
   }
 }
 

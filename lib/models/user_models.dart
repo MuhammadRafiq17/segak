@@ -12,7 +12,6 @@ class Users {
   final String name;
   final String email;
   final String phone;
-  //final int access_level;
   final String gender;
   final String age;
   final String usertype;
@@ -22,7 +21,6 @@ class Users {
     required this.name,
     required this.email,
     required this.phone,
-    //required this.access_level,
     required this.gender,
     required this.age,
     required this.usertype,
@@ -32,7 +30,6 @@ class Users {
         'name': name,
         'phone': phone,
         'email': email,
-        //'access_level': access_level,
         'gender': gender,
         'age': age,
         'usertype': usertype,
@@ -43,7 +40,6 @@ class Users {
       name: data['name'],
       phone: data['phone'],
       email: data['email'],
-      //access_level: data['access_level'],
       gender: data['gender'],
       age: data['age'],
       usertype: data['usertype']);

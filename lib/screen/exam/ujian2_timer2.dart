@@ -1,13 +1,7 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:segak/screen/exam/ujian2.dart';
 import 'package:segak/component/exam_widget/ujian_widget.dart';
-
-import 'package:segak/utils/styles.dart';
-import '../../component/widget.dart';
-import '../../services/auth.dart';
-import '../../utils/helper.dart';
 
 class Ujian2TimerNadi extends StatefulWidget {
   @override
@@ -57,7 +51,6 @@ class _Ujian2TimerNadiState extends State<Ujian2TimerNadi> {
               'Denyutan Nadi',
               style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
             )),
-
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -80,11 +73,6 @@ class _Ujian2TimerNadiState extends State<Ujian2TimerNadi> {
             ],
           ),
         ),
-        // body: Image.asset(
-        //   'assets/images/segak.jpg',
-        //   height: 500,
-        //   width: 2000,
-        // ),
       );
 
   Widget buildButtons() {

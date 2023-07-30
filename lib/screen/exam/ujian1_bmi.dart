@@ -2,10 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:segak/component/widget.dart';
-import 'package:segak/screen/exam_screen.dart';
 import 'package:segak/utils/helper.dart';
 import 'package:segak/utils/styles.dart';
-
 import '../../component/bottom_nav.dart';
 
 class LihatBMI extends StatefulWidget {
@@ -44,9 +42,6 @@ class _LihatBMIState extends State<LihatBMI> {
             score = documentSnapshot2.get('score').toString();
 
             setState(() {
-              // bmi = bmi;
-              // score = score;
-              // age = age;
               isExist = "true";
             });
           }

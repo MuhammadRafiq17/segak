@@ -1,6 +1,5 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-
 import 'package:segak/wrapper.dart';
 import '../../services/auth.dart';
 import 'package:segak/utils/helper.dart';
@@ -71,9 +70,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                               'Kami akan menghantar kod pengesahan melalui e-mel kepada anda untuk menyemak kesahihan anda.',
                               style: TextStyle(
                                 color: Colors.black38,
-                                // fontSize: 20,
                               ),
-                              // textAlign: TextAlign.center,
                             ),
                           ],
                         ),

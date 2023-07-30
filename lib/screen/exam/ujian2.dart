@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:segak/screen/exam/tahniah.dart';
 import 'package:segak/screen/exam/ujian2_naik.dart';
-
 import '../../component/widget.dart';
 import '../../services/auth.dart';
 import '../../services/database.dart';
@@ -32,7 +31,6 @@ class _Ujian2NaikState extends State<Ujian2Naik> {
             'Ujian 2',
             style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
           )),
-
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -42,18 +40,10 @@ class _Ujian2NaikState extends State<Ujian2Naik> {
                   HeaderWidget(_headerHeight, true, Icons.looks_two_outlined),
               //let's create a common header widget
             ),
-            // const Text(
-            //   "EXAM",
-            //   style: TextStyle(
-            //     fontSize: 26,
-            //     fontWeight: FontWeight.bold,
-            //   ),
-            // ),
             SafeArea(
               child: Container(
                   padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-                  margin: const EdgeInsets.fromLTRB(
-                      20, 10, 20, 10), // This will be the login form
+                  margin: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                   child: Column(
                     children: [
                       const Text(
@@ -88,11 +78,6 @@ class _Ujian2NaikState extends State<Ujian2Naik> {
                                             Icon(Icons.monitor_heart_outlined),
                                       ),
                                     ),
-                                    // decoration: ThemeHelper().textInputDecoration(
-                                    //     'Username', 'Enter your username'),
-                                    // onChanged: (val) {
-                                    //   setState(() => username = val);
-                                    // }
                                     keyboardType: TextInputType.phone,
                                     onChanged: (val) {
                                       setState(() => nadi = int.parse(val));
@@ -152,11 +137,6 @@ class _Ujian2NaikState extends State<Ujian2Naik> {
           ],
         ),
       ),
-      // body: Image.asset(
-      //   'assets/images/segak.jpg',
-      //   height: 500,
-      //   width: 2000,
-      // ),
     );
   }
 }

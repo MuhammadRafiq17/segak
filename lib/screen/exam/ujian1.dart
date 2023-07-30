@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:segak/screen/exam/tahniah.dart';
 import 'package:segak/screen/exam/ujian1_bmi.dart';
-
 import '../../component/widget.dart';
 import '../../services/auth.dart';
 import '../../services/database.dart';
@@ -33,7 +32,6 @@ class _Ujian1BMIState extends State<Ujian1BMI> {
             'Ujian 1',
             style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
           )),
-
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -43,18 +41,10 @@ class _Ujian1BMIState extends State<Ujian1BMI> {
                   HeaderWidget(_headerHeight, true, Icons.looks_one_outlined),
               //let's create a common header widget
             ),
-            // const Text(
-            //   "EXAM",
-            //   style: TextStyle(
-            //     fontSize: 26,
-            //     fontWeight: FontWeight.bold,
-            //   ),
-            // ),
             SafeArea(
               child: Container(
                   padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-                  margin: const EdgeInsets.fromLTRB(
-                      20, 10, 20, 10), // This will be the login form
+                  margin: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                   child: Column(
                     children: [
                       const Text(
@@ -89,8 +79,6 @@ class _Ujian1BMIState extends State<Ujian1BMI> {
                                             Icon(Icons.monitor_weight_outlined),
                                       ),
                                     ),
-                                    // decoration: ThemeHelper().textInputDecoration(
-                                    //     'Username', 'Enter your username'),
                                     keyboardType: TextInputType.phone,
                                     onChanged: (val) {
                                       setState(
@@ -115,8 +103,6 @@ class _Ujian1BMIState extends State<Ujian1BMI> {
                                         child: Icon(Icons.height_outlined),
                                       ),
                                     ),
-                                    // decoration: ThemeHelper().textInputDecoration(
-                                    //     'Username', 'Enter your username'),
                                     keyboardType: TextInputType.phone,
                                     onChanged: (val) {
                                       setState(
@@ -177,11 +163,6 @@ class _Ujian1BMIState extends State<Ujian1BMI> {
           ],
         ),
       ),
-      // body: Image.asset(
-      //   'assets/images/segak.jpg',
-      //   height: 500,
-      //   width: 2000,
-      // ),
     );
   }
 }

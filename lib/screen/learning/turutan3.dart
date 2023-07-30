@@ -2,14 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:segak/screen/learning/norma_lelaki.dart';
 import 'package:segak/screen/learning/norma_perempuan.dart';
 import 'package:segak/utils/helper.dart';
-
 import '../../component/learning_text/turutan3_text.dart';
 import '../../component/learning_text/yt2_turutan3.dart';
 import '../../component/learning_text/yt_turutan3.dart';
 import '../../utils/styles.dart';
-
-import '../../component/learning_text/turutan3_text2.dart';
-import '../../component/learning_text/turutan3_text3.dart';
 
 class TurutanTekan extends StatelessWidget {
   const TurutanTekan({super.key});
@@ -24,11 +20,6 @@ class TurutanTekan extends StatelessWidget {
               'Turutan 3',
               style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
             )),
-        // body: Image.asset(
-        //   'assets/images/segak.jpg',
-        //   height: 500,
-        //   width: 2000,
-        // ),
         body: ListView(children: <Widget>[
           Container(
             margin: EdgeInsets.all(8.0),
@@ -36,7 +27,6 @@ class TurutanTekan extends StatelessWidget {
               shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(8.0))),
               child: InkWell(
-                // onTap: () => print("SEGAK"),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch, // add this
                   children: <Widget>[
@@ -88,15 +78,6 @@ class TurutanTekan extends StatelessWidget {
                 children: [
                   const Text1TurutanTekan(),
                   SizedBox(height: medium),
-                  // const SearchSection(),
-                  // SizedBox(height: medium),
-                  // LabelSection(text: 'Recommended', style: heading1),
-                  // SizedBox(height: medium),
-                  // const Recommended(),
-                  // SizedBox(height: medium),
-                  // LabelSection(text: 'Top Desination', style: heading2),
-                  // SizedBox(height: medium),
-                  // const Top(),
                 ],
               ),
             ),
@@ -164,34 +145,7 @@ class TurutanTekan extends StatelessWidget {
                           );
                         }),
                   ),
-                  // const Text(
-                  //   "NORMA UJIAN TEKAN TUBI (LELAKI)\n",
-                  //   textAlign: TextAlign.center,
-                  //   style: TextStyle(
-                  //     fontWeight: FontWeight.w600,
-                  //     fontSize: 16,
-                  //   ),
-                  // ),
-                  // const Text2TurutanTekan(),
-                  // const Text(
-                  //   "\nNORMA UJIAN TEKAN TUBI UABH SUAI (PEREMPUAN)\n",
-                  //   textAlign: TextAlign.center,
-                  //   style: TextStyle(
-                  //     fontWeight: FontWeight.w600,
-                  //     fontSize: 16,
-                  //   ),
-                  // ),
-                  // const Text3TurutanTekan(),
                   SizedBox(height: medium),
-                  // const SearchSection(),
-                  // SizedBox(height: medium),
-                  // LabelSection(text: 'Recommended', style: heading1),
-                  // SizedBox(height: medium),
-                  // const Recommended(),
-                  // SizedBox(height: medium),
-                  // LabelSection(text: 'Top Desination', style: heading2),
-                  // SizedBox(height: medium),
-                  // const Top(),
                 ],
               ),
             ),
@@ -210,7 +164,6 @@ class TurutanTekan extends StatelessWidget {
                     ),
                   );
                 },
-                // => print("SEGAK"),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch, // add this
                   children: <Widget>[
@@ -254,7 +207,6 @@ class TurutanTekan extends StatelessWidget {
                     ),
                   );
                 },
-                // => print("SEGAK"),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch, // add this
                   children: <Widget>[

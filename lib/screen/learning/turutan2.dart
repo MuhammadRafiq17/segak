@@ -2,15 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:segak/component/learning_text/turutan2_text.dart';
 import 'package:segak/screen/learning/norma_lelaki.dart';
 import 'norma_perempuan.dart';
-
-// ignore: duplicate_import
-import '../../component/learning_text/turutan2_text.dart';
 import '../../component/learning_text/yt_turutan2.dart';
 import '../../utils/helper.dart';
 import '../../utils/styles.dart';
-
-import '../../component/learning_text/turutan2_text2.dart';
-import '../../component/learning_text/turutan2_text3.dart';
 
 class TurutanBangku extends StatelessWidget {
   const TurutanBangku({super.key});
@@ -25,11 +19,6 @@ class TurutanBangku extends StatelessWidget {
               'Turutan 2',
               style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
             )),
-        // body: Image.asset(
-        //   'assets/images/segak.jpg',
-        //   height: 500,
-        //   width: 2000,
-        // ),
         body: ListView(children: <Widget>[
           Container(
             margin: EdgeInsets.all(8.0),
@@ -37,7 +26,6 @@ class TurutanBangku extends StatelessWidget {
               shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(8.0))),
               child: InkWell(
-                // onTap: () => print("SEGAK"),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch, // add this
                   children: <Widget>[
@@ -79,15 +67,6 @@ class TurutanBangku extends StatelessWidget {
                 children: [
                   const Text1TurutanBangku(),
                   SizedBox(height: medium),
-                  // const SearchSection(),
-                  // SizedBox(height: medium),
-                  // LabelSection(text: 'Recommended', style: heading1),
-                  // SizedBox(height: medium),
-                  // const Recommended(),
-                  // SizedBox(height: medium),
-                  // LabelSection(text: 'Top Desination', style: heading2),
-                  // SizedBox(height: medium),
-                  // const Top(),
                 ],
               ),
             ),
@@ -155,35 +134,7 @@ class TurutanBangku extends StatelessWidget {
                           );
                         }),
                   ),
-
-                  // const Text(
-                  //   "NORMA UJIAN NAIK TURUN BANGKU (LELAKI)\n",
-                  //   textAlign: TextAlign.center,
-                  //   style: TextStyle(
-                  //     fontWeight: FontWeight.w600,
-                  //     fontSize: 16,
-                  //   ),
-                  // ),
-                  // const Text2TurutanBangku(),
-                  // const Text(
-                  //   "\nNORMA UJIAN NAIK TURUN BANGKU (PEREMPUAN)\n",
-                  //   textAlign: TextAlign.center,
-                  //   style: TextStyle(
-                  //     fontWeight: FontWeight.w600,
-                  //     fontSize: 16,
-                  //   ),
-                  // ),
-                  // const Text3TurutanBangku(),
                   SizedBox(height: medium),
-                  // const SearchSection(),
-                  // SizedBox(height: medium),
-                  // LabelSection(text: 'Recommended', style: heading1),
-                  // SizedBox(height: medium),
-                  // const Recommended(),
-                  // SizedBox(height: medium),
-                  // LabelSection(text: 'Top Desination', style: heading2),
-                  // SizedBox(height: medium),
-                  // const Top(),
                 ],
               ),
             ),
@@ -202,7 +153,6 @@ class TurutanBangku extends StatelessWidget {
                     ),
                   );
                 },
-                // => print("SEGAK"),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch, // add this
                   children: <Widget>[

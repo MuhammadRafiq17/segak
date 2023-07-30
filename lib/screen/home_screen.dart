@@ -3,9 +3,6 @@ import '../component/text_home.dart';
 import '../utils/styles.dart';
 import 'package:segak/component/widget.dart';
 
-import '../component/card_top.dart';
-import '../component/heading.dart';
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -23,11 +20,6 @@ class HomeScreen extends StatelessWidget {
               'Laman Utama',
               style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
             )),
-        // body: Image.asset(
-        //   'assets/images/segak.jpg',
-        //   height: 500,
-        //   width: 2000,
-        // ),
         body: ListView(children: <Widget>[
           Column(
             children: [
@@ -50,7 +42,6 @@ class HomeScreen extends StatelessWidget {
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8.0))),
                   child: InkWell(
-                    // onTap: () => print("SEGAK"),
                     child: Column(
                       crossAxisAlignment:
                           CrossAxisAlignment.stretch, // add this
@@ -86,15 +77,6 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       const TextHome(),
                       SizedBox(height: medium),
-                      // const SearchSection(),
-                      // SizedBox(height: medium),
-                      // LabelSection(text: 'Recommended', style: heading1),
-                      // SizedBox(height: medium),
-                      // const Recommended(),
-                      // SizedBox(height: medium),
-                      // LabelSection(text: 'Top Desination', style: heading2),
-                      // SizedBox(height: medium),
-                      // const Top(),
                     ],
                   ),
                 ),

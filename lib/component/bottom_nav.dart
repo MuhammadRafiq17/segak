@@ -40,12 +40,6 @@ class _MyAppState extends State<BottomNav> {
         colorSchemeSeed: Colors.green[700],
       ),
       home: Scaffold(
-          // body: GoogleMap(
-          //   onMapCreated: _onMapCreated,
-          //   initialCameraPosition: CameraPosition(
-          //     target: _center,
-          //     zoom: 17.0,
-          //   ),
           body: Center(child: pages.elementAt(selectedIndex)),
           bottomNavigationBar: SizedBox(
             height: 94,

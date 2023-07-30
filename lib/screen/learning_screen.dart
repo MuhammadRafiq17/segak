@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-
 import 'package:segak/screen/learning/turutan1.dart';
 import 'package:segak/screen/learning/turutan2.dart';
 import 'package:segak/screen/learning/turutan3.dart';
 import 'package:segak/screen/learning/turutan4.dart';
 import 'package:segak/screen/learning/turutan5.dart';
 import 'package:segak/component/widget.dart';
-
-import 'package:segak/utils/styles.dart';
-import 'package:segak/component/learning_text/text_learning.dart';
 
 class MyLearning extends StatelessWidget {
   const MyLearning({super.key});
@@ -24,12 +20,6 @@ class MyLearning extends StatelessWidget {
               'Laman Pembelajaran',
               style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
             )),
-        // body: Image.asset(
-        //   'assets/images/segak.jpg',
-        //   height: 500,
-        //   width: 2000,
-        // ),
-
         body: ListView(children: <Widget>[
           Column(
             children: [
@@ -45,14 +35,12 @@ class MyLearning extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-
               Container(
                 margin: EdgeInsets.all(8.0),
                 child: Card(
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8.0))),
                   child: InkWell(
-                    // onTap: () => print("SEGAK"),
                     child: Column(
                       crossAxisAlignment:
                           CrossAxisAlignment.stretch, // add this
@@ -223,7 +211,6 @@ class MyLearning extends StatelessWidget {
                         ),
                       );
                     },
-                    // onTap: () => print("SEGAK"),
                     child: Column(
                       crossAxisAlignment:
                           CrossAxisAlignment.stretch, // add this
@@ -250,9 +237,7 @@ class MyLearning extends StatelessWidget {
                             topRight: Radius.circular(8.0),
                           ),
                           child: Image.asset('assets/images/tekan.jpg',
-                              // width: 300,
-                              height: 150,
-                              fit: BoxFit.fill),
+                              height: 150, fit: BoxFit.fill),
                         ),
                         ClipRRect(
                           borderRadius: const BorderRadius.only(
@@ -260,9 +245,7 @@ class MyLearning extends StatelessWidget {
                             topRight: Radius.circular(8.0),
                           ),
                           child: Image.asset('assets/images/tekan2.jpg',
-                              // width: 300,
-                              height: 150,
-                              fit: BoxFit.fill),
+                              height: 150, fit: BoxFit.fill),
                         ),
                         const ListTile(
                           title: Center(
@@ -294,7 +277,6 @@ class MyLearning extends StatelessWidget {
                         ),
                       );
                     },
-                    // onTap: () => print("SEGAK"),
                     child: Column(
                       crossAxisAlignment:
                           CrossAxisAlignment.stretch, // add this
@@ -355,7 +337,6 @@ class MyLearning extends StatelessWidget {
                         ),
                       );
                     },
-                    // onTap: () => print("SEGAK"),
                     child: Column(
                       crossAxisAlignment:
                           CrossAxisAlignment.stretch, // add this
@@ -402,26 +383,6 @@ class MyLearning extends StatelessWidget {
                   ),
                 ),
               ),
-              // Container(
-              //   child: Padding(
-              //     padding: EdgeInsets.only(left: xsmall, top: 10, right: medium),
-              //     child: Column(
-              //       children: [
-              //         const TextLearning(),
-              //         SizedBox(height: medium),
-              //         // const SearchSection(),
-              //         // SizedBox(height: medium),
-              //         // LabelSection(text: 'Recommended', style: heading1),
-              //         // SizedBox(height: medium),
-              //         // const Recommended(),
-              //         // SizedBox(height: medium),
-              //         // LabelSection(text: 'Top Desination', style: heading2),
-              //         // SizedBox(height: medium),
-              //         // const Top(),
-              //       ],
-              //     ),
-              //   ),
-              // ),
             ],
           ),
         ]));

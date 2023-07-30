@@ -2,12 +2,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-
 import '../../services/auth.dart';
 import 'package:segak/utils/helper.dart';
 import 'package:segak/component/widget.dart';
-
-// import '../../component/bottom_nav.dart';
 import '../../component/loading.dart';
 
 class UserSignup extends StatefulWidget {
@@ -16,7 +13,6 @@ class UserSignup extends StatefulWidget {
     Key? key,
     required this.onClickedSignin,
   }) : super(key: key);
-  // const UserSignup({super.key, required void Function() onClickedSignin});
 
   @override
   State<UserSignup> createState() => _UserSignupState();
@@ -25,9 +21,6 @@ class UserSignup extends StatefulWidget {
 class _UserSignupState extends State<UserSignup> {
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
-
-  // final _gendertypelist = ["Male, Female"];
-  // String? _gender = "Gender";
 
   var email = '';
   var password = '';
@@ -39,12 +32,6 @@ class _UserSignupState extends State<UserSignup> {
   int dropgender = 0;
   int dropusertype = 0;
   bool loading = false;
-  // int dropdownValue = 0;
-  // String email = "";
-  // String username = "";
-  // String password = "";
-  // String error = "";
-  // bool loading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -115,8 +102,6 @@ class _UserSignupState extends State<UserSignup> {
                                         child: Icon(Icons.supervisor_account),
                                       ),
                                     ),
-                                    // decoration: ThemeHelper().textInputDecoration(
-                                    //     'Username', 'Enter your username'),
                                     onChanged: (val) {
                                       setState(() => username = val);
                                     }),
@@ -139,8 +124,6 @@ class _UserSignupState extends State<UserSignup> {
                                         child: Icon(Icons.email_outlined),
                                       ),
                                     ),
-                                    // decoration: ThemeHelper().textInputDecoration(
-                                    //     "E-mail address", "Enter your email"),
                                     keyboardType: TextInputType.emailAddress,
                                     validator: (val) {
                                       if (val!.isEmpty) {
@@ -173,8 +156,6 @@ class _UserSignupState extends State<UserSignup> {
                                         child: Icon(Icons.phone_enabled),
                                       ),
                                     ),
-                                    // decoration: ThemeHelper().textInputDecoration(
-                                    //     "Mobile Number", "Enter your mobile number"),
                                     keyboardType: TextInputType.phone,
                                     validator: (val) {
                                       if (val!.isEmpty) {
@@ -211,8 +192,6 @@ class _UserSignupState extends State<UserSignup> {
                                         ),
                                       ),
                                     ),
-                                    // decoration: ThemeHelper().textInputDecoration(
-                                    //     "Password", "Enter your password"),
                                     validator: (val) {
                                       if (!(val!.isEmpty) && (val.length < 8)) {
                                         return "Kata laluan mestilah sekurang-kurangnya 8 aksara";
@@ -223,7 +202,6 @@ class _UserSignupState extends State<UserSignup> {
                                       setState(() => password = val);
                                     }),
                               ), //password
-                              // const SizedBox(height: 20.0),
                               const SizedBox(height: 20.0),
                               Container(
                                 decoration:
@@ -242,8 +220,6 @@ class _UserSignupState extends State<UserSignup> {
                                         child: Icon(Icons.date_range),
                                       ),
                                     ),
-                                    // decoration: ThemeHelper().textInputDecoration(
-                                    //     "Mobile Number", "Enter your mobile number"),
                                     keyboardType: TextInputType.phone,
                                     validator: (val) {
                                       if (val!.isEmpty) {
@@ -305,98 +281,8 @@ class _UserSignupState extends State<UserSignup> {
                                     value: 2,
                                   ),
                                 ],
-                                // <String>['Dog', 'Cat', 'Tiger', 'Lion']
-                                //     .map<DropdownMenuItem<String>>((String value) {
-                                //   return DropdownMenuItem<String>(
-                                //     value: value,
-                                //     child: Text(
-                                //       value,
-                                //       style: TextStyle(fontSize: 20),
-                                //     ),
-                                //   );
-                                // }).toList(),
                               ),
                               const SizedBox(height: 20.0),
-
-                              // DropdownButtonFormField(
-                              //   decoration: const InputDecoration(
-                              //     prefixIcon: Padding(
-                              //       padding: EdgeInsets.only(
-                              //           top: 1), // add padding to adjust icon
-                              //       child: Icon(
-                              //         Icons.date_range,
-                              //       ),
-                              //     ),
-                              //     enabledBorder: OutlineInputBorder(
-                              //       //<-- SEE HERE
-                              //       borderSide: BorderSide(
-                              //           color: Colors.black, width: 1),
-                              //     ),
-                              //     focusedBorder: OutlineInputBorder(
-                              //       //<-- SEE HERE
-                              //       borderSide: BorderSide(
-                              //           color: Colors.black, width: 1),
-                              //     ),
-                              //     filled: true,
-                              //     fillColor: Colors.white,
-                              //   ),
-                              //   dropdownColor: Colors.white,
-                              //   value: dropdownValue,
-                              //   onChanged: (int? newValue) {
-                              //     setState(() {
-                              //       dropdownValue = newValue!;
-                              //     });
-                              //   },
-                              //   items: const <DropdownMenuItem<int>>[
-                              //     DropdownMenuItem(
-                              //       child: Text('Umur'),
-                              //       value: 0,
-                              //     ),
-                              //     DropdownMenuItem(
-                              //       child: Text('10 Tahun'),
-                              //       value: 10,
-                              //     ),
-                              //     DropdownMenuItem(
-                              //       child: Text('11 Tahun'),
-                              //       value: 11,
-                              //     ),
-                              //     DropdownMenuItem(
-                              //       child: Text('12 Tahun'),
-                              //       value: 12,
-                              //     ),
-                              //     DropdownMenuItem(
-                              //       child: Text('13 Tahun'),
-                              //       value: 13,
-                              //     ),
-                              //     DropdownMenuItem(
-                              //       child: Text('14 Tahun'),
-                              //       value: 14,
-                              //     ),
-                              //     DropdownMenuItem(
-                              //       child: Text('15 Tahun'),
-                              //       value: 15,
-                              //     ),
-                              //     DropdownMenuItem(
-                              //       child: Text('16 Tahun'),
-                              //       value: 16,
-                              //     ),
-                              //     DropdownMenuItem(
-                              //       child: Text('17 Tahun'),
-                              //       value: 17,
-                              //     ),
-                              //   ],
-                              //   // <String>['Dog', 'Cat', 'Tiger', 'Lion']
-                              //   //     .map<DropdownMenuItem<String>>((String value) {
-                              //   //   return DropdownMenuItem<String>(
-                              //   //     value: value,
-                              //   //     child: Text(
-                              //   //       value,
-                              //   //       style: TextStyle(fontSize: 20),
-                              //   //     ),
-                              //   //   );
-                              //   // }).toList(),
-                              // ),
-                              // const SizedBox(height: 20.0),
 
                               DropdownButtonFormField(
                                 decoration: const InputDecoration(
@@ -446,16 +332,6 @@ class _UserSignupState extends State<UserSignup> {
                                     value: 2,
                                   ),
                                 ],
-                                // <String>['Dog', 'Cat', 'Tiger', 'Lion']
-                                //     .map<DropdownMenuItem<String>>((String value) {
-                                //   return DropdownMenuItem<String>(
-                                //     value: value,
-                                //     child: Text(
-                                //       value,
-                                //       style: TextStyle(fontSize: 20),
-                                //     ),
-                                //   );
-                                // }).toList(),
                               ),
                               const SizedBox(height: 30.0),
                               Container(
@@ -478,12 +354,6 @@ class _UserSignupState extends State<UserSignup> {
                                   onPressed: () async {
                                     if (_formKey.currentState!.validate()) {
                                       if (dropgender != 0) {
-                                        // showDialog(
-                                        //     context: context,
-                                        //     barrierDismissible: false,
-                                        //     builder: (context) => const Center(
-                                        //         child:
-                                        //             CircularProgressIndicator()));
                                         if (dropusertype != 0) {
                                           setState(() => loading = true);
                                           await _auth
@@ -550,76 +420,4 @@ class _UserSignupState extends State<UserSignup> {
             ),
           );
   }
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   return loading
-  //       ? const Loading()
-  //       : Scaffold(
-  //           backgroundColor: Colors.brown[100],
-  //           appBar: AppBar(
-  //             backgroundColor: Colors.brown[400],
-  //             elevation: 0.0,
-  //             title: const Text('Dah sign in'),
-  //           ),
-  //           body: Container(
-  //               padding: const EdgeInsets.symmetric(
-  //                   vertical: 20.0, horizontal: 50.0),
-  //               child: Form(
-  //                 key: _formKey,
-  //                 child: Column(
-  //                   children: <Widget>[
-  //                     TextFormField(
-  //                       validator: (val) =>
-  //                           val!.isEmpty ? "Enter an email" : null,
-  //                       onChanged: (val) {
-  //                         setState(() => email = val);
-  //                       },
-  //                     ),
-  //                     TextFormField(
-  //                       validator: (val) => (val!.length < 8 || val.length > 21)
-  //                           ? "Enter a username 8 to 20 chars long"
-  //                           : null,
-  //                       onChanged: (val) {
-  //                         setState(() => username = val);
-  //                       },
-  //                     ),
-  //                     TextFormField(
-  //                       obscureText: true,
-  //                       validator: (val) => (val!.length < 8 || val.length > 21)
-  //                           ? "Enter a password 8 to 20 chars long"
-  //                           : null,
-  //                       onChanged: (val) {
-  //                         setState(() => password = val);
-  //                       },
-  //                     ),
-  //                     ElevatedButton(
-  //                         child: const Text('Sign up '),
-  //                         onPressed: () async {
-  //                           if (_formKey.currentState!.validate()) {
-  //                             setState(() => loading = true);
-  //                             dynamic result = await _auth.signUpEmailPassword(
-  //                                 email, username, password);
-  //                             if (result == null) {
-  //                               setState(() => error = 'error beb');
-  //                               loading = false;
-  //                             } else {
-  //                               setState(() => error = '');
-  //                               loading = false;
-  //                             }
-  //                           }
-  //                         }),
-  //                     const SizedBox(
-  //                       height: 12.0,
-  //                     ),
-  //                     Text(
-  //                       error,
-  //                       style:
-  //                           const TextStyle(color: Colors.red, fontSize: 14.0),
-  //                     )
-  //                   ],
-  //                 ),
-  //               )),
-  //         );
-  // }
 }

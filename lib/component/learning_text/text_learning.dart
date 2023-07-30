@@ -21,10 +21,7 @@ class TextLearning extends StatelessWidget {
                 DisplayText("Sila ikut pada setiap turutan yang betul"),
                 DisplayText2(
                     "- Perkataan SEGAK telah diputuskan oleh Menteri Pendidikan Malaysia pada tahun 2006."),
-
-                // DisplayText("Main Contractor", boqMainCon),
               ],
-              // border: TableBorder.all(width: 0.25, color: Colors.black),
             )
           ],
         ),
@@ -39,9 +36,6 @@ class TextLearning extends StatelessWidget {
         textScaleFactor: 1.2,
         textAlign: TextAlign.start,
         style: heading4,
-        // TextStyle(
-        //   fontWeight: FontWeight.bold,
-        // ),
       ),
     ]);
   }
@@ -53,9 +47,6 @@ class TextLearning extends StatelessWidget {
         textScaleFactor: 1.2,
         textAlign: TextAlign.start,
         style: p1,
-        // TextStyle(
-        //   fontWeight: FontWeight.bold,
-        // ),
       ),
     ]);
   }

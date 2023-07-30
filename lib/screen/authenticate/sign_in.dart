@@ -1,19 +1,12 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
 import '../../services/auth.dart';
 import 'package:segak/utils/helper.dart';
 import 'package:segak/component/widget.dart';
-
 import 'package:segak/screen/authenticate/forgot_password.dart';
-// import 'package:segak/screen/authenticate/sign_up.dart';
-// import '../../component/loading.dart';
-// import '../../utils/styles.dart';
 
 class UserSignIn extends StatefulWidget {
-  //const UserSignIn({Key? key}) : super(key: key);
-  //  const UserSignIn({super.key, required void Function() onClickedRegister});
   final Function() onClickedRegister;
 
   const UserSignIn({
@@ -84,11 +77,6 @@ class _UserSignInState extends State<UserSignIn> {
                                         child: Icon(Icons.email_outlined),
                                       ),
                                     ),
-                                    // ThemeHelper()
-                                    //     .textInputDecoration(
-                                    //         'Email', 'Enter your email'
-                                    //         ),
-
                                     validator: (val) {
                                       if (val!.isEmpty) {
                                         return "E-mel tidak boleh kosong";
@@ -123,9 +111,6 @@ class _UserSignInState extends State<UserSignIn> {
                                         ),
                                       ),
                                     ),
-                                    //ThemeHelper()
-                                    // .textInputDecoration(
-                                    //     'Password', 'Enter your password'),
                                     validator: (val) => val!.length < 8
                                         ? 'Kata laluan mestilah sekurang-kurangnya 8 aksara'
                                         : null,

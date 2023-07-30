@@ -6,7 +6,6 @@ import 'package:segak/screen/exam/ujian4_ringkuk.dart';
 import 'package:segak/services/database.dart';
 import '../../utils/helper.dart';
 import '../../component/widget.dart';
-
 import '../../services/auth.dart';
 
 class Ujian4Ringkuk extends StatefulWidget {
@@ -33,7 +32,6 @@ class _Ujian4RingkukState extends State<Ujian4Ringkuk> {
             'Ujian 4',
             style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
           )),
-
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -42,18 +40,10 @@ class _Ujian4RingkukState extends State<Ujian4Ringkuk> {
               child: HeaderWidget(_headerHeight, true, Icons.looks_4_outlined),
               //let's create a common header widget
             ),
-            // const Text(
-            //   "EXAM",
-            //   style: TextStyle(
-            //     fontSize: 26,
-            //     fontWeight: FontWeight.bold,
-            //   ),
-            // ),
             SafeArea(
               child: Container(
                   padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-                  margin: const EdgeInsets.fromLTRB(
-                      20, 10, 20, 10), // This will be the login form
+                  margin: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                   child: Column(
                     children: [
                       const Text(
@@ -89,16 +79,11 @@ class _Ujian4RingkukState extends State<Ujian4Ringkuk> {
                                         child: Icon(Icons.numbers_outlined),
                                       ),
                                     ),
-                                    // decoration: ThemeHelper().textInputDecoration(
-                                    //     'Username', 'Enter your username'),
-                                    // onChanged: (val) {
-                                    //   setState(() => username = val);
-                                    // }
                                     keyboardType: TextInputType.phone,
                                     onChanged: (val) {
                                       setState(() => ringkuk = int.parse(val));
                                     }),
-                              ), // Denyutan Nadi
+                              ), // Ringkuk tubi
                               const SizedBox(height: 20.0),
 
                               const SizedBox(height: 20.0),
@@ -154,11 +139,6 @@ class _Ujian4RingkukState extends State<Ujian4Ringkuk> {
           ],
         ),
       ),
-      // body: Image.asset(
-      //   'assets/images/segak.jpg',
-      //   height: 500,
-      //   width: 2000,
-      // ),
     );
   }
 }
